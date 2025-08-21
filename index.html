@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zayan Afif — Web Dev & Cybersecurity</title>
+  <meta name="description" content="Portfolio of Zayan Afif — Web Developer & Cybersecurity Enthusiast." />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: dark and a small neon palette
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            neon: {
+              green: "#39ff14",
+              blue: "#66e0ff",
+              purple: "#b388ff"
+            }
+          },
+          boxShadow: {
+            glow: "0 0 24px rgba(57,255,20,0.35)"
+          },
+          fontFamily: {
+            mono: ["ui-monospace","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace"],
+            sans: ["Inter","ui-sans-serif","system-ui","-apple-system","Segoe UI","Roboto","Ubuntu","Cantarell","Noto Sans","Helvetica Neue","Arial","sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Simple glitch effect for the name */
+    .glitch { position: relative; }
+    .glitch::before, .glitch::after { content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%; overflow: hidden; clip-path: inset(0 0 0 0); }
+    .glitch::before { transform: translate(2px,0); text-shadow: -1px 0 #39ff14; animation: glitch1 2.5s infinite linear alternate-reverse; }
+    .glitch::after  { transform: translate(-2px,0); text-shadow: 1px 0 #66e0ff; animation: glitch2 3s infinite linear alternate-reverse; }
+    @keyframes glitch1 { 0%{clip-path: inset(0 0 80% 0)} 20%{clip-path: inset(10% 0 60% 0)} 40%{clip-path: inset(50% 0 30% 0)} 60%{clip-path: inset(20% 0 50% 0)} 80%{clip-path: inset(0 0 70% 0)} 100%{clip-path: inset(40% 0 20% 0)} }
+    @keyframes glitch2 { 0%{clip-path: inset(80% 0 0 0)} 20%{clip-path: inset(60% 0 10% 0)} 40%{clip-path: inset(30% 0 50% 0)} 60%{clip-path: inset(50% 0 20% 0)} 80%{clip-path: inset(70% 0 0 0)} 100%{clip-path: inset(20% 0 40% 0)} }
+
+    /* Smooth anchor scrolling */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="dark bg-black text-white font-sans">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40">
+    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-mono text-neon-green text-lg">$ cd ~/zayan</a>
+      <ul class="hidden md:flex gap-6 text-sm">
+        <li><a class="hover:text-neon-green" href="#about">About</a></li>
+        <li><a class="hover:text-neon-green" href="#skills">Skills</a></li>
+        
+        <li><a class="hover:text-neon-green" href="#beyond">Beyond</a></li>
+        <li><a class="hover:text-neon-green" href="#contact">Contact</a></li>
+      </ul>
+      <button id="menuBtn" class="md:hidden border border-white/20 rounded-xl px-3 py-1">Menu</button>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+      <ul class="mx-auto max-w-6xl px-4 py-3 grid gap-2 text-sm">
+        <li><a class="block py-1 hover:text-neon-green" href="#about">About</a></li>
+        <li><a class="block py-1 hover:text-neon-green" href="#skills">Skills</a></li>
+        <li><a class="block py-1 hover:text-neon-green" href="#projects">Projects</a></li>
+        <li><a class="block py-1 hover:text-neon-green" href="#blog">Blog</a></li>
+        <li><a class="block py-1 hover:text-neon-green" href="#beyond">Beyond</a></li>
+        <li><a class="block py-1 hover:text-neon-green" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO / TERMINAL -->
+  <section id="home" class="mx-auto max-w-6xl px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="font-mono text-neon-blue">$ whoami</p>
+      <h1 class="mt-2 text-4xl md:text-6xl font-bold glitch" data-text="Zayan Afif">Zayan Afif</h1>
+      <p class="mt-4 text-xl text-white/80">Web Developer • Cybersecurity Enthusiast • Red Team Mindset</p>
+      <div class="mt-6 flex gap-3">
+        <!--Add view projects later-->
+        <a href="#contact" class="rounded-2xl border border-neon-green text-neon-green px-4 py-2 shadow-glow">Contact</a>
+      </div>
+    </div>
+    <div class="border border-white/10 rounded-2xl p-4 bg-white/5">
+      <div class="font-mono text-sm space-y-2">
+        <div class="text-white/60"># pseudo-terminal</div>
+        <div><span class="text-green-400">$</span> status</div>
+        <div>&gt; Learning | Building | Breaking</div>
+        <div><span class="text-green-400">$</span> interests --list</div>
+        <div>&gt; web-dev, pentest, graphic-design, gaming, cars</div>
+        <div><span class="text-green-400">$</span> motto</div>
+        <div>&gt; Hacking is understanding the rules.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/10">
+    <h2 class="text-2xl md:text-3xl font-bold">About</h2>
+    <p class="mt-4 text-white/80 max-w-3xl">I'm Zayan, a college student in Bangladesh passionate about web development and cybersecurity. I love turning ideas into usable, secure web experiences. I study, build small tools, write what I learn, and keep my setup simple. Currently exploring React, Tailwind, and foundational red-team concepts.</p>
+    <div class="mt-6 flex gap-4 text-sm">
+      <!-- Update these links -->
+      <a href="https://github.com/your-username" target="_blank" class="underline hover:text-neon-green">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-username" target="_blank" class="underline hover:text-neon-green">LinkedIn</a>
+      <a href="#" class="underline hover:text-neon-green">Resume.pdf</a>(Will add later)
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/10">
+    <h2 class="text-2xl md:text-3xl font-bold">Skills</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold">Web Development</h3>
+        <ul class="mt-3 space-y-1 text-white/80 list-disc list-inside">
+          <li>HTML, CSS, JavaScript (Beginner)</li>
+          <li>Tailwind CSS (Beginner)</li>
+          <li>React (Beginner)</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold">Cybersecurity</h3>
+        <ul class="mt-3 space-y-1 text-white/80 list-disc list-inside">
+          <li>Linux basics, terminal</li>
+          <li>Wireshark, basic recon (soon)</li>
+          <li>CTF write-ups (soon)</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold">Tools</h3>
+        <ul class="mt-3 space-y-1 text-white/80 list-disc list-inside">
+          <li>GitHub</li>
+          <li>VS Code (beginner)</li>
+          <li>Burp Suite (beginner)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND CODE -->
+  <section id="beyond" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/10">
+    <h2 class="text-2xl md:text-3xl font-bold">Beyond Code</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold">Favorite Games</h3>
+        <p class="mt-2 text-white/80">PUBG, Warzone, Half‑Life 2, GTA V, Valorant…</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold">Favorite Car</h3>
+        <p class="mt-2 text-white/80">Mitsubishi Lancer EX (A9 nostalgia 😄)</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold">Vibes</h3>
+        <p class="mt-2 text-white/80">Dark, retro, terminal‑style, no‑nonsense.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/10">
+    <h2 class="text-2xl md:text-3xl font-bold">Contact</h2>
+    <p>I am easy to find!</p>
+  </section>
+
+  <footer class="mx-auto max-w-6xl px-4 py-10 border-t border-white/10 text-white/60 text-sm">
+    <div class="flex items-center justify-between">
+      <p>© <span id="year"></span> Zayan Afif. Built with ♥, Tailwind, and black coffee.</p>
+      <a class="underline hover:text-neon-green" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- DATA + SCRIPT (replace with your own) -->
+  <script>
+    // ======== MENU ========
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('hidden');
+    });
+
+    // ======== YEAR ========
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ======== PROJECTS (Edit this array or generate from GitHub API in a build step) ========
+    const projects = [
+      {
+        name: "Portfolio Starter (this site)",
+        desc: "Single-file Tailwind template with hacker vibes.",
+        stack: ["HTML","Tailwind","Vanilla JS"],
+        demo: "#",
+        code: "https://github.com/your-username/portfolio"
+      },
+      {
+        name: "Secure Notes",
+        desc: "Local-only notes app using Web Crypto API.",
+        stack: ["HTML","JS","Crypto"],
+        demo: "#",
+        code: "https://github.com/your-username/secure-notes"
+      },
+      {
+        name: "Recon Helper",
+        desc: "Tiny CLI to organize recon checklists (WIP).",
+        stack: ["Node","CLI"],
+        demo: "#",
+        code: "https://github.com/your-username/recon-helper"
+      }
+    ];
+
+    const projectGrid = document.getElementById('projectGrid');
+    projects.forEach(p => {
+      const el = document.createElement('article');
+      el.className = 'rounded-2xl border border-white/10 p-5 bg-white/5 flex flex-col';
+      el.innerHTML = `
+        <h3 class="text-lg font-semibold">${p.name}</h3>
+        <p class="mt-2 text-white/80">${p.desc}</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/70">${p.stack.map(s=>`<span class='rounded-full bg-white/10 px-2 py-1'>${s}</span>`).join('')}</div>
+        <div class="mt-4 flex gap-3 text-sm">
+          <a class="underline hover:text-neon-green" href="${p.demo}" target="_blank">Demo</a>
+          <a class="underline hover:text-neon-green" href="${p.code}" target="_blank">Code</a>
+        </div>`;
+      projectGrid.appendChild(el);
+    });
+
+    // ======== BLOG (Replace with real posts or fetch from an RSS/JSON in a build) ========
+    const blogPosts = [
+      {
+        title: "How I built this portfolio",
+        date: "2025-08-21",
+        tags: ["tailwind","design","setup"],
+        excerpt: "Notes on structure, styling choices, and next steps.",
+        link: "#"
+      },
+      {
+        title: "XSS in simple terms",
+        date: "2025-08-18",
+        tags: ["security","web"],
+        excerpt: "Breaking down reflected vs stored with tiny examples.",
+        link: "#"
+      },
+      {
+        title: "Dual‑channel RAM: why it matters",
+        date: "2025-08-15",
+        tags: ["hardware","performance"],
+        excerpt: "Quick benchmark notes from my own setup.",
+        link: "#"
+      }
+    ];
+
+    const blogGrid = document.getElementById('blogGrid');
+    blogPosts.forEach(b => {
+      const el = document.createElement('article');
+      el.className = 'rounded-2xl border border-white/10 p-5 bg-white/5 flex flex-col';
+      el.innerHTML = `
+        <div class="text-xs text-white/60">${new Date(b.date).toLocaleDateString()}</div>
+        <h3 class="mt-1 text-lg font-semibold">${b.title}</h3>
+        <p class="mt-2 text-white/80">${b.excerpt}</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/70">${b.tags.map(t=>`<span class='rounded-full bg-white/10 px-2 py-1'>#${t}</span>`).join('')}</div>
+        <div class="mt-4"><a class="underline hover:text-neon-green" href="${b.link}">Read →</a></div>`;
+      blogGrid.appendChild(el);
+    });
+
+    // If you host a real RSS later, update this
+    document.getElementById('rssLink').href = '#';
+
+    // ======== HOW TO SPLIT INTO REPOS ========
+    /*
+      Suggested repos:
+      1) portfolio  — this website (public). Contains /posts for static markdown (if you choose static blog).
+      2) blog-posts — markdown-only repo (optional). Use a static site generator later.
+      3) tools-*    — each project/tool gets its own repo (secure-notes, recon-helper, etc.).
+
+      Deployment options:
+      - GitHub Pages: put this as index.html in the repo root.
+      - Netlify/Vercel: drop this file in a project, or move to Next.js later.
+
+      Blog options:
+      - Simple: keep blogPosts[] above and link to standalone HTML files in /posts.
+      - Dev.to/Hashnode: write there, then embed links here; later, fetch their RSS during build.
+    */
+  </script>
+</body>
+</html>
